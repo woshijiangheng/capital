@@ -16,6 +16,6 @@ module.exports=passport=>{
       if(data){
           return done(null,data);
       }
-      return done(null,fasle)
+      return done(null,false)
     }));
 }

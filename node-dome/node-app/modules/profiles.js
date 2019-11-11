@@ -6,23 +6,28 @@ const Schema=mongoose.Schema;
    
 const ProfileSchema=new Schema({
 type:{
-    type:String
-},
+   type:String,
+      },
 describe:{
     type:String
 },
-incode:{
+income:{
     type:String,
-    require:true
-
-},
+    required:true
+  },
 cash:{
     type:String,
-    require:true
+    required:true
 },
 remark:{
     type:String,
+    required:true
 
+},
+expend:{
+    type:String,
+    required:true
+  
 },
 //时间 
 date:{
