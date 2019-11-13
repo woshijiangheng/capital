@@ -1,0 +1,12 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "name": "蒋衡",
+      "password": "123456",
+      "email": "1301950289@qq.com",
+      "indentity": "manager"
+    }
+   
+  ]
+}

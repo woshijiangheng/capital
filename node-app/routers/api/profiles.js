@@ -20,7 +20,7 @@ router.get('/test',(req,res)=>{
   //@desc  创建信息的接口
   //@access 公开的数据
 
-  router.post('/add',(req,res)=>{
+  router.post('/add',passport.authenticate('jwt',{session:false}),(req,res)=>{
    const profilesFieds={};
 //    判断是否传过了
    if(req.body.type) profilesFieds.type=req.body.type
@@ -95,7 +95,7 @@ new profiles(profilesFieds).save().then(data=>{
   //@desc 删除单个信息
   //@access 公开的数据
 
-router.delete('/remove/:id', async (req,res)=>{
+router.delete('/remove/:id',passport.authenticate('jwt',{session:false}), async (req,res)=>{
    let data=await profiles.deleteOne({_id:req.params.id})
      if(data) {
        res.json('删除成功')

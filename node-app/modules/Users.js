@@ -29,7 +29,7 @@ avatar:{
 },
 identity:{
     type:String,
-    required:true
+    
 },
 //时间 
 date:{
