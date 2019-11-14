@@ -3,7 +3,31 @@
     <router-view></router-view>
    </div>
 </template>
+<script>
+import jwt_decode from 'jwt-decode'
+export default {
+  created() {
+    if(sessionStorage.token){
 
+      const decode=jwt_decode(sessionStorage.token)
+   this.$store.dispatch("setIsAutnenticated", !this.isEmpty(decode));
+   this.$store.dispatch("setUser", decode);
+
+    }
+  },
+  methods: {
+    isEmpty(value) {
+      return (
+        value === undefined ||
+        value === null ||
+        (typeof value === "object" && Object.keys(value).length === 0) ||
+        (typeof value === "string" && value.trim().length === 0)
+      );
+    }
+  }
+}
+
+</script>
 <style>
 html,
 body,
@@ -11,4 +35,6 @@ body,
   width: 100%;
   height: 100%;
 }
+
+ 
 </style>

@@ -39,7 +39,7 @@ new profiles(profilesFieds).save().then(data=>{
        //route post/profiles/
   //@desc  获取所有信息
   //@access 公开的数据
-  router.get('/',passport.authenticate('jwt',{session:false}),async (req,res)=>{
+  router.get('/find',async (req,res)=>{
   let data=await profiles.find();
        
   if(data){
