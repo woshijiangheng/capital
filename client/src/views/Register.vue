@@ -78,8 +78,15 @@ export default {
       this.$refs.registerRefForm.validate( async valid => {
         if (valid) {
           let{ data }=await this.$axios.post('users/register',this.registerRuleForm)
+       
+          if(data.status==400){
+            this.$message.error('邮箱被注册')
+            return
+          }
+          
          if(data){
-           this.$message.success('注册成功')
+
+         this.$message.success('注册成功')
            this.$router.push('/login')
          }
           

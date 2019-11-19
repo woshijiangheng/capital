@@ -68,7 +68,7 @@ export default {
             this.$store.dispatch("setIsAutnenticated", !this.isEmpty(decode));
             this.$store.dispatch("setUser", decode);
                 
-                   this.$router.push('/index')
+                   this.$router.push('/home')
                }else{
                    this.$message.error('请重新输入')
                }
